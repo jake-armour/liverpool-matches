@@ -42,14 +42,14 @@ for elem in match_elems:
 types = ['last', 'current', 'next']
 
 for i in data:
-  urllib.request.urlretrieve(data[i]['home'], os.getcwd() + '/' + types[i] + '/home-team.png')
-  urllib.request.urlretrieve(data[i]['away'], os.getcwd() + '/' + types[i] + '/away-team.png')
-  urllib.request.urlretrieve(data[i]['competition'], os.getcwd() + '/' + types[i] + '/competition.png')
-  with open(os.getcwd()+ "/" + types[i] + "-match.json", "w") as write_file:
+  urllib.request.urlretrieve(data[i]['home'], '/media/pi/NAS/Jake/Development/liverpool-matches/' + types[i] + '/home-team.png')
+  urllib.request.urlretrieve(data[i]['away'], '/media/pi/NAS/Jake/Development/liverpool-matches/' + types[i] + '/away-team.png')
+  urllib.request.urlretrieve(data[i]['competition'], '/media/pi/NAS/Jake/Development/liverpool-matches/' + types[i] + '/competition.png')
+  with open('/media/pi/NAS/Jake/Development/liverpool-matches/' + types[i] + "-match.json", "w") as write_file:
     json.dump(data[i], write_file)
   
 
-repo_dir = os.getcwd()
+repo_dir = '/media/pi/NAS/Jake/Development/liverpool-matches/'
 repo = Repo(repo_dir)
 
 file_list = [
